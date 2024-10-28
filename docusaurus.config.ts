@@ -77,7 +77,7 @@ const config: Config = {
             title: '仓鼠周刊',
             logo: {
                 alt: '仓鼠周刊Logo',
-                src: 'img/logo.svg',
+                src: 'img/logo.png',
             },
             items: [
                 {
