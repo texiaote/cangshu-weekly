@@ -37,18 +37,18 @@ const config: Config = {
                     sidebarPath: './sidebars.ts',
                     // 控制哪些页面显示侧边栏
                     async sidebarItemsGenerator({
-                        defaultSidebarItemsGenerator,
-                        ...args
-                    }) {
+                                                    defaultSidebarItemsGenerator,
+                                                    ...args
+                                                }) {
                         const sidebarItems = await defaultSidebarItemsGenerator(args);
-                        
-                        // 如果是介绍页面，不显示侧边栏
-                        if (args.item.id === '介绍') {
-                            return [];
-                        }
-                        
+
+
+                        // 加日志，输出args和sidebarItems的值
+                        console.log('args', args);
+                        console.log('sidebarItems', sidebarItems);
+
                         // 其他页面保持原有的侧边栏项目，但反转顺序
-                        return sidebarItems.reverse();
+                        return sidebarItems.reverse().filter((item) => {item.id!=='Introduction'});
                     },
                     // 启用 MDX
                     remarkPlugins: [],

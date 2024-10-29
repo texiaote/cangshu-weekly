@@ -16,8 +16,7 @@ export default function DocCard({ title, to, count }: DocCardProps): JSX.Element
           <span className={styles.folderIcon}>📁</span>
           <span className={styles.title}>{title}</span>
         </div>
-        <div className={styles.itemCount}>{count} items</div>
       </div>
     </Link>
   );
-} 
+}
