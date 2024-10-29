@@ -35,15 +35,20 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
-                    // 在这里直接添加 sidebarItemsGenerator 配置
-                    async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
-                        function reverseSidebarItems(items) {
-                            // Reverse items at current level
-                            items.reverse();
-                            return items;
-                        }
+                    // 控制哪些页面显示侧边栏
+                    async sidebarItemsGenerator({
+                        defaultSidebarItemsGenerator,
+                        ...args
+                    }) {
                         const sidebarItems = await defaultSidebarItemsGenerator(args);
-                        return reverseSidebarItems(sidebarItems);
+                        
+                        // 如果是介绍页面，不显示侧边栏
+                        if (args.item.id === '介绍') {
+                            return [];
+                        }
+                        
+                        // 其他页面保持原有的侧边栏项目，但反转顺序
+                        return sidebarItems.reverse();
                     },
                     // 启用 MDX
                     remarkPlugins: [],
@@ -89,16 +94,10 @@ const config: Config = {
             },
             items: [
                 {
-                    type: 'docSidebar',
-                    sidebarId: 'issueSidebar',
+                    to: '/docs/介绍',
                     position: 'left',
                     label: '周刊',
                 }
-                //  ,       {
-                //   href: 'https://github.com/facebook/docusaurus',
-                //   label: 'GitHub',
-                //   position: 'right',
-                // },
             ],
         },
         footer: {
