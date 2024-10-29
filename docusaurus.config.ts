@@ -94,7 +94,7 @@ const config: Config = {
             },
             items: [
                 {
-                    to: '/docs/介绍',
+                    to: '/docs/Introduction',
                     position: 'left',
                     label: '周刊',
                 }
