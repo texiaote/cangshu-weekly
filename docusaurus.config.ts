@@ -44,7 +44,17 @@ const config: Config = {
                         }
                         const sidebarItems = await defaultSidebarItemsGenerator(args);
                         return reverseSidebarItems(sidebarItems);
-                    }
+                    },
+                    // 启用 MDX
+                    remarkPlugins: [],
+                    rehypePlugins: [],
+                    // 添加这一行来支持 .mdx 文件
+                    exclude: [
+                        '**/_*.{js,jsx,ts,tsx,md,mdx}',
+                        '**/_*/**',
+                        '**/*.test.{js,jsx,ts,tsx}',
+                        '**/__tests__/**'
+                    ],
                 },
                 blog: {
                     showReadingTime: true,

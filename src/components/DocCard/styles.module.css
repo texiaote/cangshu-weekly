@@ -1,0 +1,39 @@
+.cardContainer {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background-color: var(--ifm-card-background-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.folderIcon {
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.itemCount {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+} 
