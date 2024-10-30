@@ -42,13 +42,8 @@ const config: Config = {
                                                 }) {
                         const sidebarItems = await defaultSidebarItemsGenerator(args);
 
-
-                        // 加日志，输出args和sidebarItems的值
-                        console.log('args', args);
-                        console.log('sidebarItems', sidebarItems);
-
                         // 其他页面保持原有的侧边栏项目，但反转顺序
-                        return sidebarItems.reverse().filter((item) => {item.id!=='Introduction'});
+                        return sidebarItems.reverse().filter((item) => item.id!='Introduction');
                     },
                     // 启用 MDX
                     remarkPlugins: [],
