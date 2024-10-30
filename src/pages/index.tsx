@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/Introduction">
-            最新周刊
+            浏览周刊
           </Link>
         </div>
       </div>
