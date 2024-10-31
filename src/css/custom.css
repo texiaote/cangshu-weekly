@@ -28,3 +28,14 @@
   --ifm-color-primary-lightest: #5090C7;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* 调整侧边栏图标的样式 */
+.menu__link span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.menu__link span svg,
+.menu__link span img {
+  margin-right: 8px;
+}

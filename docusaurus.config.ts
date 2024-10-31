@@ -28,7 +28,6 @@ const config: Config = {
         defaultLocale: 'en',
         locales: ['en'],
     },
-
     presets: [
         [
             'classic',
@@ -43,7 +42,7 @@ const config: Config = {
                         const sidebarItems = await defaultSidebarItemsGenerator(args);
 
                         // 其他页面保持原有的侧边栏项目，但反转顺序
-                        return sidebarItems.reverse().filter((item) => item.id!='Introduction');
+                        return sidebarItems.reverse().filter((item) => item.id != 'guide');
                     },
                     // 启用 MDX
                     remarkPlugins: [],
@@ -54,7 +53,7 @@ const config: Config = {
                         '**/_*/**',
                         '**/*.test.{js,jsx,ts,tsx}',
                         '**/__tests__/**'
-                    ],
+                    ]
                 },
                 blog: {
                     showReadingTime: true,
@@ -89,7 +88,7 @@ const config: Config = {
             },
             items: [
                 {
-                    to: '/docs/Introduction',
+                    to: '/docs',
                     position: 'left',
                     label: '周刊',
                 }
@@ -103,6 +102,20 @@ const config: Config = {
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
+        },
+        docs: {
+            sidebar: {
+                hideable: true,
+                autoCollapseCategories: true,
+            },
+        },
+        markdown: {
+            mermaid: true,
+            mdx1Compat: {
+                comments: true,
+                admonitions: true,
+                headingIds: true,
+            },
         },
     } satisfies Preset.ThemeConfig,
 };

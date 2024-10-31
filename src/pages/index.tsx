@@ -6,9 +6,11 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import {usePluginData} from "@docusaurus/core/lib/client/exports/useGlobalData";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -19,7 +21,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/Introduction">
+            to="/docs/guide">
             浏览周刊
           </Link>
         </div>
