@@ -19,7 +19,6 @@ export default function DocCategories(): JSX.Element {
 
     // 使用 useDoc 获取每个文档的完整信息
     const allDocItems = defaultVersion.docs.map(doc => {
-        console.log("doc:", doc)
         const docData = useDocById(doc.id);
         return {
             id: docData.id,
@@ -29,7 +28,6 @@ export default function DocCategories(): JSX.Element {
         } as DocItem;
     });
 
-    console.log("allDocItems", allDocItems);
 
     // 过滤并排序周刊文档
     const weeklyDocs = allDocItems
@@ -53,6 +51,7 @@ export default function DocCategories(): JSX.Element {
                         key={doc.id}
                         title={doc.title}
                         to={doc.path}
+                        description={doc.description}
                     />
                 ))}
             </div>
